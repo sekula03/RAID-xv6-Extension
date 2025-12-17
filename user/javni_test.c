@@ -45,9 +45,8 @@ void child_process(int id) {
     exit(0);
 }
 
-int main() {
-
-  	int status, successful = 1;
+void test() {
+    int status, successful = 1;
 
     init_raid(RAID5);
 
@@ -74,76 +73,6 @@ int main() {
     exit(0);
 }
 
-
-
-
-
-
-
-
-
-
-
-//void check_data(uint blocks, uchar *blk, uint block_size);
-//
-//int
-//main(int argc, char *argv[])
-//{
-//  if (init_raid(RAID4) != 0) printf("init err\n");
-//
-//  uint disk_num, block_num, block_size;
-//  if (info_raid(&block_num, &block_size, &disk_num) < 0) printf("info err\n");
-//
-//  uint blocks = (512 > block_num ? block_num : 512);
-//
-//  uchar* blk = malloc(block_size);
-//  for (uint i = 0; i < blocks; i++) {
-//    for (uint j = 0; j < block_size; j++) {
-//      blk[j] = j + i;
-//    }
-//    if (write_raid(i, blk) < 0) printf("write err\n");
-//  }
-//
-//  for (int i = 0; i < block_size; i++) blk[i] = 0;
-//
-//  check_data(blocks, blk, block_size);
-//
-//  disk_fail_raid(2);
-//
-//  for (int i = 0; i < blocks; i++) blk[i] = 0;
-//
-//  check_data(blocks, blk, block_size);
-//
-//  disk_repaired_raid(2);
-//
-//  for (int i = 0; i < blocks; i++) blk[i] = 0;
-//
-//  check_data(blocks, blk, block_size);
-//
-//  free(blk);
-//
-//
-//  printf("OK\n");
-//
-//  exit(0);
-//}
-//
-//void check_data(uint blocks, uchar *blk, uint block_size)
-//{
-//  for (uint i = 0; i < blocks; i++)
-//  {
-//    if (read_raid(i, blk) != 0) {
-//      printf("read err\n");
-//      return;
-//    }
-//    for (uint j = 0; j < block_size; j++)
-//    {
-//      if ((uchar)(j + i) != blk[j])
-//      {
-//        printf("expected=%d got=%d ", j + i, blk[j]);
-//        printf("Data in the block %d faulty\n", i);
-//        return;
-//      }
-//    }
-//  }
-//}
+int main() {
+    test()
+}
